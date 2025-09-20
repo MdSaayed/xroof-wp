@@ -98,10 +98,128 @@ function xroof_header_logo()
         <img src="<?php echo esc_url($header_logo); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
             class="nav__logo-img">
     </a>
-    
+
     <?php
 }
 
+function xroof_offcanvas_logo()
+{
+    $xroof_offcanvas_logo = get_theme_mod('xroof_offcanvas_logo', __(get_template_directory_uri() . '/assets/img/global/logo-black.png', 'xroof'));
+    ?>
+    <?php if (!empty($xroof_offcanvas_logo)): ?>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="offcanvas__logo-link">
+            <img src="<?php echo esc_html($xroof_offcanvas_logo) ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                class="offcanvas__logo-img">
+        </a>
+    <?php endif; ?>
+<?php
+}
 
+function xroof_footer_copyright()
+{
+    $footer_copyright_text = get_theme_mod('footer_copyright_text', __('XRooF Themes 2025. All Rights Reserved.', 'xroof'));
+    ?>
+    <p class="footer__bottom-text body-text mb-0"><?php echo esc_html($footer_copyright_text); ?></p>
+    <?php
+}
+
+function xroof_kses( $harry_custom_tag = '' ) {
+    $harry_allowed_html = [
+        'svg' => array(
+            'class' => true,
+            'aria-hidden' => true,
+            'aria-labelledby' => true,
+            'role' => true,
+            'xmlns' => true,
+            'width' => true,
+            'height' => true,
+            'viewbox' => true,  
+        ),
+        'path' => array(
+            'd' => true,
+            'fill' => true,
+            'stroke' => true,
+            'stroke-width' => true,
+            'stroke-linecap' => true,
+            'stroke-linejoin' => true,
+            'opacity' => true,
+        ),
+        'a' => [
+            'class' => [],
+            'href' => [],
+            'title' => [],
+            'target' => [],
+            'rel' => [],
+        ],
+        'b' => [],
+        'blockquote' => [
+            'cite' => [],
+        ],
+        'cite' => [
+            'title' => [],
+        ],
+        'code' => [],
+        'del' => [
+            'datetime' => [],
+            'title' => [],
+        ],
+        'dd' => [],
+        'div' => [
+            'class' => [],
+            'title' => [],
+            'style' => [],
+        ],
+        'dl' => [],
+        'dt' => [],
+        'em' => [],
+        'h1' => [],
+        'h2' => [],
+        'h3' => [],
+        'h4' => [],
+        'h5' => [],
+        'h6' => [],
+        'i' => [
+            'class' => [],
+        ],
+        'img' => [
+            'alt' => [],
+            'class' => [],
+            'height' => [],
+            'src' => [],
+            'width' => [],
+        ],
+        'li' => array(
+            'class' => array(),
+        ),
+        'ol' => array(
+            'class' => array(),
+        ),
+        'p' => array(
+            'class' => array(),
+        ),
+        'q' => array(
+            'cite' => array(),
+            'title' => array(),
+        ),
+        'span' => array(
+            'class' => array(),
+            'title' => array(),
+            'style' => array(),
+        ),
+        'iframe' => array(
+            'width' => array(),
+            'height' => array(),
+            'scrolling' => array(),
+            'frameborder' => array(),
+            'allow' => array(),
+            'src' => array(),
+        ),
+        'strike' => array(),
+        'br' => array(),
+        'strong' => array(),
+    ];
+
+    return wp_kses( $harry_custom_tag, $harry_allowed_html );
+}
 
 

@@ -63,7 +63,6 @@
 
     &__content {
         background: $color-black;
-        padding-top: 7rem;
     }
 
     &__inner {
@@ -110,15 +109,12 @@
         color: $color-white;
     }
 
+
+
     &__nav-link,
     &__hour,
     &__newsletter-text {
         color: $color-white;
-    }
-
-    &__nav-link:hover {
-        color: $color-primary;
-        transition: $btn-transition;
     }
 
     &__newsletter-form-group {
@@ -159,7 +155,7 @@
             border-radius: 50%;
             flex-shrink: 0;
             margin: 0;
-            border:none;
+            border: none;
             transition: $primary-transition;
 
             &:hover {
@@ -177,13 +173,31 @@
         }
     }
 
+    &__links ul {
+        padding-left: 0;
+
+        li {
+            margin-bottom: 1rem;
+
+            a {
+                color: $color-white;
+
+                &:hover {
+                    color: $color-primary;
+                    transition: $btn-transition;
+                }
+            }
+        }
+    }
+
     &__bottom {
         border-top: 0.3px solid $color-white;
         padding-top: 2rem;
         padding-bottom: 1rem;
         color: $color-white;
 
-        &-text {
+        &-text,
+        a {
             color: $color-white !important;
         }
 
@@ -236,10 +250,10 @@
                 max-width: 250px;
             }
 
-            &__inner{
+            &__inner {
                 column-gap: 2.5rem;
-                
-                @include bp.respond-to(sm){
+
+                @include bp.respond-to(sm) {
                     flex-direction: column;
                 }
             }

@@ -32119,13 +32119,14 @@ a {
   letter-spacing: 0.08px;
   color: #000;
   color: #000;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 .blog-card__btn {
   display: inline-block !important;
   text-align: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  margin-top: 1.5rem;
 }
 .blog-card:hover {
   -webkit-transform: translateY(-8px);
@@ -32139,6 +32140,24 @@ a {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: rgb(239.8138075314, 56.6861924686, 65.6192468619);
+}
+.blog-card__video-icon, .blog-card__audio-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.blog-card__video-icon:hover svg path, .blog-card__audio-icon:hover svg path {
+  fill: #EE212B;
+  stroke: #EE212B;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .blog--style-2 {
   background: #0F0E0E;
@@ -32598,7 +32617,6 @@ a {
 }
 .footer__content {
   background: #000;
-  padding-top: 7rem;
 }
 .footer__inner {
   display: -webkit-box;
@@ -32659,11 +32677,6 @@ a {
 }
 .footer__nav-link, .footer__hour, .footer__newsletter-text {
   color: #ffffff;
-}
-.footer__nav-link:hover {
-  color: #EE212B;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .footer__newsletter-form-group {
   position: relative;
@@ -32764,13 +32777,28 @@ a {
 .footer .newsletter-form-btn:hover svg path {
   fill: #ffffff;
 }
+.footer__links ul {
+  padding-left: 0;
+}
+.footer__links ul li {
+  margin-bottom: 1rem;
+}
+.footer__links ul li a {
+  color: #ffffff;
+}
+.footer__links ul li a:hover {
+  color: #EE212B;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .footer__bottom {
   border-top: 0.3px solid #ffffff;
   padding-top: 2rem;
   padding-bottom: 1rem;
   color: #ffffff;
 }
-.footer__bottom-text {
+.footer__bottom-text,
+.footer__bottom a {
   color: #ffffff !important;
 }
 .footer__bottom-nav-link {

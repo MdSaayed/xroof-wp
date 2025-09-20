@@ -29,6 +29,7 @@ JS INDEX
 16. Services Video
 17. Scroll Progress Circle
 18. Hero Two bg Animation
+19. Blog Audio Player
 
 ------------------------------------------------------------------*/
 
@@ -874,6 +875,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+/* =============================
+* 19. Blog Audio Player
+============================= */
+document.addEventListener('DOMContentLoaded', function () {
+    const playerContainer = document.querySelector('.blog-card__audio-icon');
+    
+    if (!playerContainer) return;  
+
+    const audio = playerContainer.querySelector('audio');
+    const playBtn = playerContainer.querySelector('.play-btn');
+    const playIcon = playerContainer.querySelector('.icon-play');
+    const pauseIcon = playerContainer.querySelector('.icon-pause');
+
+    playBtn.addEventListener('click', function () {
+        if (audio.paused) {
+            audio.play();
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        } else {
+            audio.pause();
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        }
+    });
+
+    // Reset icon when audio ends
+    audio.addEventListener('ended', function () {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+    });
+});
+
 
 
 

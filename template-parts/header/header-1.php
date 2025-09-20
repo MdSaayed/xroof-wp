@@ -57,8 +57,8 @@ $header_button_link = get_theme_mod('header_button_link', __('#', 'xroof'));
                 );
                 ?>
 
-                <div class="nav__btn-wrap d-flex gap-2">
-                    <?php if (!empty($header_right_switch) && !empty($header_button_link)): ?>
+                <?php if (!empty($header_right_switch) && !empty($header_button_text)): ?>
+                    <div class="nav__btn-wrap d-flex gap-2">
                         <a href="<?php echo esc_url($header_button_link); ?>" class="nav__btn btn-icon-right-primary">
                             <?php echo esc_html($header_button_text); ?>
                             <svg width="40" height="4" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,13 +67,12 @@ $header_button_link = get_theme_mod('header_button_link', __('#', 'xroof'));
                                     fill="black" />
                             </svg>
                         </a>
-                    <?php endif; ?>
-
-                    <button id="offcanvas-toggle" class="nav__toggle"
-                        aria-label="<?php echo esc_attr__('Toggle navigation', 'xroof'); ?>">
-                        ☰
-                    </button>
-                </div>
+                    </div>
+                <?php endif; ?>
+                <button id="offcanvas-toggle" class="nav__toggle"
+                    aria-label="<?php echo esc_attr__('Toggle navigation', 'xroof'); ?>">
+                    ☰
+                </button>
             </nav>
         </div>
     </div>

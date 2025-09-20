@@ -18,7 +18,7 @@ function xroof_header_info_section()
             'title' => esc_html__('Header Info', 'xroof'),
             'description' => esc_html__('My Section Description.', 'xroof'),
             'panel' => 'xroof_panel',
-            'priority' => 160,
+            'priority' => 10,
         ]
     );
 
@@ -111,7 +111,7 @@ function xroof_header_social_section()
             'title' => esc_html__('Header Social Links', 'xroof'),
             'description' => esc_html__('My Section Description.', 'xroof'),
             'panel' => 'xroof_panel',
-            'priority' => 160,
+            'priority' => 20,
         ]
     );
 
@@ -166,7 +166,7 @@ function xroof_header_logo_section()
             'title' => esc_html__('Header Logo', 'xroof'),
             'description' => esc_html__('Upload your site logo that will appear in the header.', 'xroof'),
             'panel' => 'xroof_panel',
-            'priority' => 160,
+            'priority' => 30,
         ]
     );
 
@@ -184,3 +184,153 @@ function xroof_header_logo_section()
     );
 }
 xroof_header_logo_section();
+
+function xroof_offcanvas_section()
+{
+    new \Kirki\Section(
+        'xroof_offcanvas_section',
+        [
+            'title' => esc_html__('Offcanvas Settings', 'xroof'),
+            'description' => esc_html__('Manage the offcanvas logo, button text, and button URL here.', 'xroof'),
+            'panel' => 'xroof_panel',
+            'priority' => 40,
+        ]
+    );
+
+    new \Kirki\Field\Image(
+        [
+            'settings' => 'xroof_offcanvas_logo',
+            'label' => esc_html__('Offcanvas Logo', 'xroof'),
+            'description' => esc_html__('Upload or select an image to display as the offcanvas logo.', 'xroof'),
+            'section' => 'xroof_offcanvas_section',
+            'default' => get_template_directory_uri() . '/assets/img/global/logo-black.png',
+            'input_attrs' => [
+                'id' => 'xroof_offcanvas_logo_id',
+            ],
+        ]
+    );
+
+    new \Kirki\Field\Checkbox_Switch(
+        [
+            'settings' => 'xroof_offcanvas_button_toggle',
+            'label' => esc_html__('Show Offcanvas Button', 'xroof'),
+            'description' => esc_html__('Enable or disable the offcanvas button display.', 'xroof'),
+            'section' => 'xroof_offcanvas_section',
+            'default' => 'on',
+            'choices' => [
+                'on' => esc_html__('Enable', 'xroof'),
+                'off' => esc_html__('Disable', 'xroof'),
+            ],
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'xroof_offcanvas_button_text',
+            'label' => esc_html__('Offcanvas Button Text', 'xroof'),
+            'section' => 'xroof_offcanvas_section',
+            'default' => esc_html__('Get Started', 'xroof'),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\URL(
+        [
+            'settings' => 'xroof_offcanvas_button_url',
+            'label' => esc_html__('Offcanvas Button URL', 'xroof'),
+            'section' => 'xroof_offcanvas_section',
+            'default' => '#',
+            'priority' => 10,
+        ]
+    );
+}
+xroof_offcanvas_section();
+
+function xroof_footer_sections()
+{
+    new \Kirki\Section(
+        'xroof_footer_section',
+        [
+            'title' => esc_html__('Footer', 'xroof'),
+            'panel' => 'xroof_panel',
+            'priority' => 999,
+            'description' => esc_html__('All Footer settings', 'xroof'),
+        ]
+    );
+
+    // Footer 1 Text
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer1_copyright_text1',
+            'label' => esc_html__('Footer 1 (Home 1) Copyright Text', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => esc_html__('XRooF Theme 2025. All Rights Reserved (Home 1).', 'xroof'),
+            'priority' => 10,
+        ]
+    );
+
+    // Footer 2 Text
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer2_copyright_text2',
+            'label' => esc_html__('Footer 2 (Home 2) Copyright Text', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => esc_html__('XRooF Theme 2025. All Rights Reserved (Home 2).', 'xroof'),
+            'priority' => 20,
+        ]
+    );
+
+    // Footer 3 Text
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer3_copyright_text3',
+            'label' => esc_html__('Footer 3 (Home 3) Copyright Text', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => esc_html__('XRooF Theme 2025. All Rights Reserved (Home 3).', 'xroof'),
+            'priority' => 30,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_privacy_text',
+            'label' => esc_html__('Privacy Policy Text', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => 'Privacy Policy',
+            'priority' => 40,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_privacy_url',
+            'label' => esc_html__('Privacy Policy URL', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => '#',
+            'priority' => 41,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_terms_text',
+            'label' => esc_html__('Terms & Conditions Text', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => 'Terms & Conditions',
+            'priority' => 42,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_terms_url',
+            'label' => esc_html__('Terms & Conditions URL', 'xroof'),
+            'section' => 'xroof_footer_section',
+            'default' => '#',
+            'priority' => 43,
+        ]
+    );
+}
+xroof_footer_sections();
+
+
