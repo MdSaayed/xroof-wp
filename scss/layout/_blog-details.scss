@@ -24,6 +24,21 @@
         }
     }
 
+    .blog-card__gallery {
+        width: 100%;
+        height: 100%;
+
+        .blog-card__slide{
+            max-height: 500px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
     &-content {
         flex: 1;
     }

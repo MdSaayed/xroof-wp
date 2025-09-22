@@ -81,12 +81,5 @@ $header_button_link = get_theme_mod('header_button_link', __('#', 'xroof'));
 
 
 <!-- Template parts -->
-<?php echo get_template_part('template-parts/header/offcanvas') ?>
-<?php echo get_template_part('template-parts/header/preloader') ?>
-
-
-
-
-
-
- 
+<?php echo get_template_part('template-parts/header/offcanvas'); ?>
+<?php echo get_template_part('template-parts/header/preloader'); ?>

@@ -118,6 +118,7 @@ include_once('inc/common/scripts.php');
 include_once('inc/template-function.php');
 include_once('inc/nav-walker.php');
 include_once('inc/widgets.php');
+include_once('inc/breadcrumb.php');
 if (class_exists('kirki')) {
     include_once('inc/xroof-kirki.php');
 }

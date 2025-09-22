@@ -333,4 +333,29 @@ function xroof_footer_sections()
 }
 xroof_footer_sections();
 
+function xroof_breadcrumb_section()
+{
+    new \Kirki\Section(
+        'xroof_breadcrumb_section',
+        [
+            'title' => esc_html__('Breadcrumb', 'xroof'),
+            'panel' => 'xroof_panel',
+            'priority' => 41,
+            'description' => esc_html__('All breadcrumb settings', 'xroof'),
+        ]
+    );
+
+    new \Kirki\Field\Image(
+        [
+            'settings' => 'breadcrumb_bg_img',
+            'label' => esc_html__('Breadcrumb Background', 'xroof'),
+            'description' => esc_html__('Upload or select an image to display as breadcrumb background', 'xroof'),
+            'section' => 'xroof_breadcrumb_section',
+            'default' => get_template_directory_uri() . '/assets/img/global/breadcrumbs-bg.png',
+        ]
+    );
+
+}
+xroof_breadcrumb_section();
+
 
