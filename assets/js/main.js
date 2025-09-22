@@ -649,7 +649,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const arrow = document.querySelector('.nav__arrow');
   const menuWrap = document.querySelector('.nav__menu');
-  const breakpoint = 768; 
+  const breakpoint = 768;
 
   if (!arrow || !menuWrap) return;
 
@@ -785,7 +785,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =============================
 * 17. Scroll Progress Circle
 ============================= */
- function initCircularProgress() {
+function initCircularProgress() {
   // Create container div
   const container = document.createElement('div');
   container.classList.add('progress-circle');
@@ -881,32 +881,49 @@ document.addEventListener("DOMContentLoaded", function () {
 * 19. Blog Audio Player
 ============================= */
 document.addEventListener('DOMContentLoaded', function () {
-    const playerContainer = document.querySelector('.blog-card__audio-icon');
-    
-    if (!playerContainer) return;  
+  const playerContainer = document.querySelector('.blog-card__audio-icon');
 
-    const audio = playerContainer.querySelector('audio');
-    const playBtn = playerContainer.querySelector('.play-btn');
-    const playIcon = playerContainer.querySelector('.icon-play');
-    const pauseIcon = playerContainer.querySelector('.icon-pause');
+  if (!playerContainer) return;
 
-    playBtn.addEventListener('click', function () {
-        if (audio.paused) {
-            audio.play();
-            playIcon.style.display = 'none';
-            pauseIcon.style.display = 'block';
-        } else {
-            audio.pause();
-            playIcon.style.display = 'block';
-            pauseIcon.style.display = 'none';
-        }
-    });
+  const audio = playerContainer.querySelector('audio');
+  const playBtn = playerContainer.querySelector('.play-btn');
+  const playIcon = playerContainer.querySelector('.icon-play');
+  const pauseIcon = playerContainer.querySelector('.icon-pause');
 
-    // Reset icon when audio ends
-    audio.addEventListener('ended', function () {
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-    });
+  playBtn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+    } else {
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+    }
+  });
+
+  // Reset icon when audio ends
+  audio.addEventListener('ended', function () {
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var blog_slider = tns({
+    container: '.blog-card__gallery',
+    items: 1,
+    slideBy: 'page',
+    autoplay: true,
+    autoplayButtonOutput: false,
+    autoplayTimeout: 3000,
+    mouseDrag: true,
+    controls: false,
+    nav: false,
+    navPosition: 'bottom',
+  });
 });
 
 

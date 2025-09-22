@@ -54,10 +54,16 @@ add_action('after_setup_theme', 'xroof_theme_support');
 
 function xroof_register_footer_widgets()
 {
-
-    /** =======================
-     *  Home 1 Footer Widgets
-     *  ======================= */
+    // Blog Details Sidebar   
+    register_sidebar([
+        'name' => esc_html__('Blog Details Sidebar', 'xroof'),
+        'id' => 'blog-details-sidebar',
+        'description' => esc_html__('Widgets in this area will be shown on the Blog Details page.', 'xroof'),
+        'before_widget' => '<div id="%1$s" class="widget blog__sidebar %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5 class="sidebar__title mb-4">',
+        'after_title' => '</h5>',
+    ]);
 
     // Footer 1 - Brand
     register_sidebar([
@@ -105,12 +111,6 @@ function xroof_register_footer_widgets()
 
 }
 add_action('widgets_init', 'xroof_register_footer_widgets');
-
-
-
-
-
-
 
 
 // Inludes File

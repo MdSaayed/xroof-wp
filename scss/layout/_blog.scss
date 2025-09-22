@@ -22,7 +22,8 @@
             position: relative;
         }
 
-        &__image-wrap {
+        &__image-wrap,
+        &__slide {
             max-height: 300px;
             max-width: 100%;
             width: 100%;
@@ -118,9 +119,48 @@
 
             &:hover svg path {
                 fill: $color-primary;
-                 stroke: $color-primary;
+                stroke: $color-primary;
                 transition: $btn-transition;
-            } 
+            }
+        }
+    }
+
+    &--style-1 {
+        .blog__pagination {
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+
+                li {
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                    border: 1px solid $color-primary;
+
+                    a,
+                    span {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+
+                        &.current {
+                            background: $color-primary;
+                            color: $color-white;
+                            box-shadow: 0 4px 8px rgba($color-primary, 0.4);
+                        }
+                    }
+
+                    &:hover a,
+                    span {
+                        background: $color-primary;
+                        color: $color-white !important;
+                    }
+                }
+
+            }
         }
     }
 
